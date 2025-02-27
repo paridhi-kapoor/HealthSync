@@ -4,6 +4,7 @@ import Loading from './components/loading';
 import Header from './components/header';
 import React, { useState, useEffect } from 'react';
 import './App.css';
+import AppointmentPage from './components/appointment';
 
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -30,6 +31,7 @@ function App() {
             <LoginPage onLogin={handleLogin} />
           ) : (
             <Header/>
+            
           )}
         </>
       )}

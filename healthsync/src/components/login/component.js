@@ -1,14 +1,28 @@
 import styled from "styled-components";
 
+// Body styles
+export const Body = styled.body`
+  background-image: url("./logbg.png");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Montserrat", sans-serif;
+  height: 100vh;
+  margin: 0;
+`;
+
 export const Container = styled.div`
   display: flex;
   border-radius: 10px;
   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
-  position: relative;
+  position: center;
   overflow: hidden;
   width: 1000px;
-  max-width: 100%;
-  min-height: 600px;
+  max-width: 50%;
+  min-height: 300px;
+  background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent background */
 `;
 
 export const SignUpContainer = styled.div`
@@ -160,4 +174,3 @@ export const Paragraph = styled.p`
   letter-spacing: 0.5px;
   margin: 20px 0 30px;
 `;
-

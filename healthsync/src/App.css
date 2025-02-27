@@ -3,7 +3,7 @@
   align-items: center;
   justify-content: center;
   height: 100vh;
-  background: url('./assets/load.png') center/cover no-repeat;
+  background: url('./components/assets/load.png') center/cover no-repeat;
   position: relative;
 }
 
@@ -31,55 +31,90 @@
                0px 0px 30px rgba(255, 235, 205, 0.4);
 }
 
-/* ................................Login/signup page ..................................................................... */
-
-
-* {
-  box-sizing: border-box;
-}
-
-body {
-  background: #f6f5f7;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  font-family: "Montserrat", sans-serif;
-  height: 100vh;
-  margin: -20px 0 50px;
-}
 
   /* .................................  Main page css/......................................................... */
 
   body {
     font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
     margin: 0;
     padding: 0;
   }
   
-  .App {
-    text-align: center;
-  }
-  
+  /* Navbar styles */
   .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 20px;
-    background-color: #333;
-    color: white;
+    background-color: rgb(43, 68, 255);
+    color: rgb(255, 255, 255);
+    padding: 15px 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.808);
+    min-height: 60px;
+    
   }
   
-  .left-icon, .right-icon {
+  
+  .left-icon img {
+    height: 40px;
+    width: fit-content;
+  }
+  
+  .right-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
     cursor: pointer;
+    margin-left: auto; /* Pushes the icon to the right corner */
   }
   
+  .right-icon img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+  
+  /* Sidebar styles */
+  .sidebar {
+    width: 250px;
+    height: 100vh;
+    background-color: #ffffff;
+    border-color: black;
+    color: rgb(0, 0, 0);
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 1000;
+  }
+  
+  .sidebar a {
+    padding: 10px 15px;
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    margin: 5px 0;
+  }
+  
+  .sidebar a:hover {
+    background-color: #ffffff;
+  }
+  
+  /* Greeting styles */
   .greeting {
     text-align: center;
     margin: 20px 0;
     font-size: 24px;
+    font-weight: bold;
+    color: #333;
   }
   
+  /* Cards container styles */
   .cards-container {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -87,15 +122,97 @@ body {
     padding: 20px;
   }
   
+  /* Card styles */
   .card {
-    border: 1px solid #ddd;
-    padding: 20px;
+    background-color: white;
     border-radius: 8px;
-    background-color: #f9f9f9;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.658);
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    size: 100px;
   }
   
   .card canvas {
-    width: 100% !important;
-    height: auto !important;
+    width: 100%;
+    height: 250px;
   }
+
+.user{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100px;
+  width: 100px;
+  border-radius: 80%;
+  background-color: #f5f5f5;
+  border-color: black;
+  border-shadow: 0 4px 6px rgba(0, 0, 0, 0.808);
+}
   
+/* .................................  Appointment page css/......................................................... */
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f5f5f5;
+  margin: 0;
+  padding: 0;
+}
+
+.appointment-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+h1 {
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.appointment-form {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  width: 300px;
+}
+
+.appointment-form label {
+  display: block;
+  margin-bottom: 8px;
+  color: #333;
+}
+
+.appointment-form input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+button {
+  background-color: #1a1a1a;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #333;
+}
+
+.appointment-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
