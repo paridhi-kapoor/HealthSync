@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Chart, registerables } from 'chart.js';
-
+import AppointmentPage from './appointment';
 Chart.register(...registerables);
 
 const Header = () => {
@@ -28,27 +28,31 @@ const Header = () => {
 const Navbar = ({ toggleSidebar }) => {
   return (
     <nav className="navbar">
-      <div className="left-icon"><img src='./assets/healthsync.png' alt="HealthSync logo" /></div>
+      <div className="left-icon"><img src='healthsync.png' alt="HealthSync logo" /></div>
       <div className="right-icon" onClick={toggleSidebar}><img src='2750667.png' /></div>
     </nav>
   );
 };
 
-const Sidebar = () => {
+const Sidebar = ({ toggleSidebar, goToPage }) => {
   return (
     <div className="sidebar">
-      <img src='2750667.png' alt="User" className='user' />
-      <li>User Details</li>
-      <ul> Email : </ul>
-      <ul>Age : </ul>
-      <a href="./header.js">Dashboard</a>
-      <a href="./appointment.js">Book an Appointment</a>
+      <div className="sidebar-header">
+        <img src='2750667.png' alt="User" className='user' />
+        <button className="close-btn" onClick={toggleSidebar}>&times;</button>
+      </div>
+      <ul>
+        <li>User Details</li>
+        <li>Email:</li>
+        <li>Age:</li>
+      </ul>
+      <a href="#" onClick={() => goToPage('home')}>Dashboard</a>
+      <a href="AppointmentPage" onClick={() => goToPage('AppointmentPage')}>Book an Appointment</a>
       <a href="#">Check your Health</a>
-      <a href="#">Emergancy</a>
+      <a href="#">Emergency</a>
     </div>
   );
 };
-
 const Greeting = () => {
   return (
     <div className="greeting">Welcome to Your Dashboard!</div>

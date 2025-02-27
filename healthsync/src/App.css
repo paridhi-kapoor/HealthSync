@@ -56,7 +56,7 @@
   
   
   .left-icon img {
-    height: 40px;
+    height: 100px;
     width: fit-content;
   }
   
@@ -155,64 +155,143 @@
   
 /* .................................  Appointment page css/......................................................... */
 
-body {
-  font-family: Arial, sans-serif;
-  background-color: #f5f5f5;
-  margin: 0;
-  padding: 0;
-}
-
 .appointment-page {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  text-align: center;
   padding: 20px;
 }
 
-h1 {
-  color: #333;
-  margin-bottom: 20px;
+.appointment-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Push form and image apart */
+  max-width: 900px;
+  margin: auto;
+  padding: 20px;
 }
 
 .appointment-form {
-  background-color: #fff;
+  flex: 1;
+  text-align: left;
   padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  margin-bottom: 20px;
-  width: 300px;
 }
 
 .appointment-form label {
   display: block;
-  margin-bottom: 8px;
-  color: #333;
+  font-weight: bold;
+  margin-top: 10px;
 }
 
 .appointment-form input {
   width: 100%;
-  padding: 10px;
-  margin-bottom: 15px;
-  border-radius: 4px;
+  padding: 8px;
+  margin-top: 5px;
   border: 1px solid #ccc;
+  border-radius: 5px;
 }
 
-button {
-  background-color: #1a1a1a;
-  color: white;
+.appointment-form button {
+  margin-top: 15px;
   padding: 10px 20px;
   border: none;
-  border-radius: 4px;
+  background-color: #007BFF;
+  color: white;
   cursor: pointer;
+  border-radius: 5px;
 }
 
-button:hover {
-  background-color: #333;
+.appointment-image {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end; /* Push image to right */
+  align-items: center;
+  padding: 20px;
 }
 
 .appointment-image img {
-  max-width: 100%;
+  width: 80%; /* Adjust size */
+  max-width: 300px;
   height: auto;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  animation: slideInRight 1s ease-in-out; /* Smooth entry */
+}
+
+/* Animation for sliding in from right */
+@keyframes slideInRight {
+  from {
+    transform: translateX(100px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+/*  Checkups */
+/* Container styling */
+
+/* Main container - full width for desktop */
+.checkup-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 80%;
+  margin: 40px auto;
+  background-color: rgb(43, 68, 255);
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Text content styling */
+.checkup-text {
+  flex: 1;
+  text-align: center;
+  padding-right: 20px;
+}
+
+.checkup-text h2 {
+  color: #000000;
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+.checkup-text p {
+  color: #000000;
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+/* Image styling */
+.doc-img {
+  flex: 0.5;
+}
+
+.doc-img img {
+  width: 250px;
+  height: auto;
+ 
+ 
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .checkup-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .checkup-text {
+    padding-right: 0;
+    margin-bottom: 20px;
+  }
+
+  .doc-img img {
+    width: 200px;
+  }
+}
+
+.footer{
+  background-color: rgb(43, 68, 255);
+  color:rgb(0, 0, 0) ;
+  height: 70px;
+  justify-content: center;
 }

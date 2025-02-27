@@ -1,10 +1,11 @@
-
+import React, { useState, useEffect } from 'react';
 import LoginPage from './components/login/loginpage';
 import Loading from './components/loading';
 import Header from './components/header';
-import React, { useState, useEffect } from 'react';
-import './App.css';
+import Checkup from './components/checkup'; // New Checkup section
+import Footer from './components/footer'; // Footer added
 import AppointmentPage from './components/appointment';
+import './App.css';
 
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -24,14 +25,18 @@ function App() {
   return (
     <div className="app-container">
       {isLoading ? (
-        <Loading/>
+        <Loading />
       ) : (
         <>
           {!isAuthenticated ? (
             <LoginPage onLogin={handleLogin} />
           ) : (
-            <Header/>
-            
+            <>
+              <Header />
+              <Checkup /> {/* Checkup section placed here */}
+              <AppointmentPage/>
+              <Footer /> {/* Footer at the bottom */}
+            </>
           )}
         </>
       )}
